@@ -8,5 +8,4 @@ const foodCategorySchema = new Schema(
   { timestamps: true }
 );
 const FoodCategory = model("FoodCategory", foodCategorySchema);
-
 export default FoodCategory;
