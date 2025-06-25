@@ -1,14 +1,14 @@
 import { Db, MongoClient } from "mongodb";
-import "dotenv/config"
+import "dotenv/config";
+import mongoose from "mongoose";
 
 export let db: Db;
 
 export const connectDb = async () => {
   try {
-    const client = new MongoClient(process.env.MONGO_URI!);
-    await client.connect();
-    db = client.db("food-delivery");
-    return client;
+    mongoose
+      .connect(process.env.MONGO_URI!)
+      .then(() => console.log("database connected"));
   } catch (error) {
     return error;
   }
