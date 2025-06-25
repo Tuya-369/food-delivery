@@ -10,6 +10,6 @@ export const createFoodCategory = async (req: Request, res: Response) => {
 
     res.status(200).send({ succes: true, foodCategory });
   } catch (error) {
-    res.status(400).send({ message: "api error", error });
+    res.status(400).send({ message: "API error", error });
   }
 };
