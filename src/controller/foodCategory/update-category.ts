@@ -2,13 +2,16 @@ import { Request, Response } from "express";
 import FoodCategory from "../../model/foodCategory";
 
 export const updateCategory = async (req: Request, res: Response) => {
-  const { id } = req.params;
+  const { foodCategoryId } = req.params;
   const { categoryName } = req.body;
 
   try {
-    const updatedCategory = await FoodCategory.findByIdAndUpdate(id, {
-      categoryName,
-    });
+    const updatedCategory = await FoodCategory.findByIdAndUpdate(
+      foodCategoryId,
+      {
+        categoryName,
+      }
+    );
 
     res.status(200).send({
       success: true,

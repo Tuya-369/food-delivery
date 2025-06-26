@@ -2,10 +2,12 @@ import { Request, Response } from "express";
 import FoodCategory from "../../model/foodCategory";
 
 export const getDeletedCategory = async (req: Request, res: Response) => {
-  const { id } = req.params;
+  const { foodCategoryId } = req.params;
 
   try {
-    const deletedCategory = await FoodCategory.findByIdAndDelete(id);
+    const deletedCategory = await FoodCategory.findByIdAndDelete(
+      foodCategoryId
+    );
 
     res.status(200).send({
       success: true,

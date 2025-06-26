@@ -2,19 +2,18 @@ import express, { Request, Response } from "express";
 import { connectDb, db } from "./database/database";
 import foodCategoryRouter from "./router/foodCategory.router";
 import chalk from "chalk";
-import foodRouter from "./router/food";
+import foodRouter from "./router/food.router";
+import userRouter from "./router/user.router";
 
 const port = 3000;
 const app = express();
 app.use(express.json());
 
-app.use("/foodCategory", foodCategoryRouter);
+app.use("/food-category", foodCategoryRouter);
 
-app.use("foodRouter", foodRouter);
+app.use("/food", foodRouter);
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("hello from food deliver");
-});
+app.use("/user", userRouter);
 
 app.listen(port, async () => {
   await connectDb();
