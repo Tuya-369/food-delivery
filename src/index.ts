@@ -13,7 +13,7 @@ app.use("/food-category", foodCategoryRouter);
 
 app.use("/food", foodRouter);
 
-app.use("/user", userRouter);
+app.use("/auth", userRouter);
 
 app.listen(port, async () => {
   await connectDb();

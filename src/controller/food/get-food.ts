@@ -3,7 +3,7 @@ import Food from "../../model/food";
 
 export const getFood = async (req: Request, res: Response) => {
   try {
-    const foods = await Food.find();
+    const foods = await Food.find().populate("category");
 
     res.status(200).send({ success: true, foods });
   } catch (error) {
