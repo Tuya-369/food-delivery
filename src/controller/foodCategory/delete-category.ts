@@ -9,7 +9,7 @@ export const getDeletedCategory = async (req: Request, res: Response) => {
 
     res.status(200).send({
       success: true,
-      message: "Category deleted successfully",
+      message: `${deletedCategory?.categoryName} deleted successfully`,
       deletedCategory,
     });
   } catch (error) {
