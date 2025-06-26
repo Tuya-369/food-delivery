@@ -4,6 +4,7 @@ import foodCategoryRouter from "./router/foodCategory.router";
 import chalk from "chalk";
 import foodRouter from "./router/food.router";
 import userRouter from "./router/user.router";
+import foodOrderRouter from "./router/foodOrder.router";
 
 const port = 3000;
 const app = express();
@@ -14,6 +15,8 @@ app.use("/food-category", foodCategoryRouter);
 app.use("/food", foodRouter);
 
 app.use("/auth", userRouter);
+
+app.use("/food-order", foodOrderRouter);
 
 app.listen(port, async () => {
   await connectDb();
