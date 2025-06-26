@@ -12,7 +12,7 @@ export const updateCategory = async (req: Request, res: Response) => {
 
     res.status(200).send({
       success: true,
-      message: "Category updated successfully",
+      message: `${updatedCategory?.categoryName} changed to ${categoryName}  `,
       updatedCategory,
     });
   } catch (error) {
