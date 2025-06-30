@@ -2,10 +2,9 @@ import { Request, Response } from "express";
 import Food from "../../model/food";
 
 export const createFood = async (req: Request, res: Response) => {
-  const { foodName, price, ingredients, category, image } = req.body;
+  const {  price, ingredients, category, image } = req.body;
   try {
     const food = await new Food({
-      foodName: foodName,
       price: price,
       category: category,
       image: image,

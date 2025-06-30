@@ -9,7 +9,6 @@ const userSchema = new Schema(
     // role:{ Type: UserRoleEnum,required:true},
     orderedFoods: { type: Schema.Types.ObjectId, ref: "Food", required: true },
     ttl: { type: Date },
-    isVerified: { type: Boolean, default: false },
   },
 
   { timestamps: true }

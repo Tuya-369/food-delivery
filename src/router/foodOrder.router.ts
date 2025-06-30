@@ -7,7 +7,7 @@ import { updateOrder } from "../controller/foodOrder/update-order";
 
 const foodOrderRouter = express.Router();
 
-foodOrderRouter.post("/", createOrder);
+foodOrderRouter.post("/createOrder", createOrder);
 
 foodOrderRouter.get("/", getOrder);
 
