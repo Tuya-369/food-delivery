@@ -5,7 +5,7 @@ export const createOrder = async (req: Request, res: Response) => {
   const { foodId,user, totalPrice,foodOrderItems,status,quantity ,price} = req.body;
 
   try {
-    const order = await new foodOrder({
+    const order = await new foodOrder ({
       user,
       foodOrderItems:foodOrderItems,
      quantity:quantity,
@@ -14,6 +14,7 @@ export const createOrder = async (req: Request, res: Response) => {
       status:status,
       price:price
     }).save();
+    
     res.status(200).send({ success: true, order });
   } catch (error) {
     res.status(400).send({ message: "api error", error });
