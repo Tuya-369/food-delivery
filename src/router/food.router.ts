@@ -7,7 +7,7 @@ import { getDeletedFood } from "../controller/food/delete-food";
 
 const foodRouter = express.Router();
 
-foodRouter.post("/", createFood);
+foodRouter.post("/createFood", createFood);
 
 foodRouter.get("/:foodId", getFoodById);
 

@@ -2,13 +2,14 @@ import { Request, Response } from "express";
 import Food from "../../model/food";
 
 export const createFood = async (req: Request, res: Response) => {
-  const {  price, ingredients, category, image } = req.body;
+  const {  price, ingredients, category, image,foodName } = req.body;
   try {
     const food = await new Food({
       price: price,
       category: category,
       image: image,
       ingredients: ingredients,
+      foodName:foodName
     }).save();
 
     res.status(200).send({ success: true, food });

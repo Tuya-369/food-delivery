@@ -1,3 +1,5 @@
+import cors from "cors";
+
 import express, { Request, Response } from "express";
 import { connectDb, db } from "./database/database";
 import foodCategoryRouter from "./router/foodCategory.router";
@@ -6,10 +8,10 @@ import foodRouter from "./router/food.router";
 import userRouter from "./router/user.router";
 import foodOrderRouter from "./router/foodOrder.router";
 
-const port = 3000;
+const port = 3001;
 const app = express();
 app.use(express.json());
-
+app.use(cors())
 app.use("/food-category", foodCategoryRouter);
 
 app.use("/food", foodRouter);
