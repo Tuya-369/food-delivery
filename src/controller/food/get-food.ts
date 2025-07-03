@@ -3,7 +3,7 @@ import Food from "../../model/food";
 
 
 export const getFood = async (req: Request, res: Response) => {
-  const FoodsWithCategories = await Food.aggregate([
+  const foodWithCategories = await Food.aggregate([
   {
     $lookup: {
       from: "foodcategories",
@@ -39,7 +39,7 @@ export const getFood = async (req: Request, res: Response) => {
   try {
     const foods = await Food.find().populate("category");
 
-    res.status(200).send({ success: true, foods });
+    res.status(200).send({ success: true, foodWithCategories });
   } catch (error) {
     res.status(400).send({ message: "API error", error });
   }

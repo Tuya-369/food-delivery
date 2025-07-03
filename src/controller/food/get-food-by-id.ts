@@ -3,6 +3,7 @@ import Food from "../../model/food";
 
 export const getFoodById = async (req: Request, res: Response) => {
   const { foodId } = req.params;
+  
   try {
     const food = await Food.findById(foodId).populate("category");
 
